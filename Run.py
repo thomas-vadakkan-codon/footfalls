@@ -13,6 +13,7 @@ t0 = time.time()
 
 def run():
 	try: 
+		# construct the argument parse and parse the arguments
 		inside = []
 		outside = []
 		ap = argparse.ArgumentParser()
