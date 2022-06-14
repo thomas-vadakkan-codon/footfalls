@@ -4,12 +4,12 @@ from imutils.video import VideoStream
 from imutils.video import FPS
 from mylib import config, thread
 import time, schedule, csv
-import numpy as np
 import argparse, imutils
 import time, dlib, cv2, datetime
-from itertools import zip_longest
+import numpy as np
 
 t0 = time.time()
+
 
 def run():
 	try: 
@@ -40,11 +40,14 @@ def run():
 		# load our serialized model from disk
 		net = cv2.dnn.readNetFromCaffe(args["prototxt"], args["model"])
 
+
 		# if a video path was not supplied, grab a reference to the ip camera
 		if not args.get("input", False):
 			print("[INFO] Starting the live stream..")
 			vs = VideoStream(config.url).start()
+			# dont minimise the window
 			time.sleep(2.0)
+			#time.sleep(2.0)
 
 		# otherwise, grab a reference to the video file
 		else:
@@ -219,8 +222,10 @@ def run():
 			if writer is not None:
 				writer.write(frame)
 
-			# show the output frame
+			# show the output frame without minimising the window
 			cv2.imshow("CodonSoft People Tracker", frame)
+			#dont minimise frame
+			#cv2.setWindowProperty("CodonSoft People Tracker", cv2.WND_PROP_FULLSCREEN, cv2.WINDOW_FULLSCREEN)
 			key = cv2.waitKey(1) & 0xFF
 
 			# if the `q` key was pressed, break from the loop
@@ -235,7 +240,9 @@ def run():
 		fps.stop()
 		print("[INFO] elapsed time: {:.2f}".format(fps.elapsed()))
 		print("[INFO] approx. FPS: {:.2f}".format(fps.fps()))
-
+		#quit program
+		cv2.destroyAllWindows()
+		
 
 		# # if we are not using a video file, stop the camera video stream
 		# if not args.get("input", False):
