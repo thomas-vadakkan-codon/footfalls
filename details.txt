@@ -1,0 +1,3 @@
+Went In: []
+Went Out: [1, 2]
+Remaining Inside: -2
