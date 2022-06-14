@@ -242,7 +242,7 @@ def run():
 		print("[INFO] approx. FPS: {:.2f}".format(fps.fps()))
 		#quit program
 		cv2.destroyAllWindows()
-		
+		cv2.release(frame)
 
 		# # if we are not using a video file, stop the camera video stream
 		# if not args.get("input", False):
