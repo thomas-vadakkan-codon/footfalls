@@ -67,16 +67,10 @@ The following is an example of the added features. Note: You can easily on/off t
 - Note: To setup the sender email, please refer the instructions inside 'mylib/mailer.py'. Setup receiver email in the config.
 
 
-***2. Threading:***
-- Multi-Threading is implemented in 'mylib/thread.py'. If you ever see a lag/delay in your real-time stream, consider using it.
-- Threading removes OpenCV's internal buffer (which basically stores the new frames yet to be processed until your system processes the old frames) and thus reduces the lag/increases fps. 
-- If your system is not capable of simultaneously processing and outputting the result, you might see a delay in the stream. This is where threading comes into action.
-- It is most suitable for solid performance on complex real-time applications. To use threading:
-
-``` set Thread = True in config. ```
 
 
-***3. Scheduler:***
+
+***1. Scheduler:***
 - Automatic scheduler to start the software. Configure to run at every second, minute, day, or Monday to Friday.
 - This is extremely useful in a business scenario, for instance, you can run it only at your desired time (9-5?).
 - Variables and memory would be reset == less load on your machine.
@@ -86,31 +80,16 @@ The following is an example of the added features. Note: You can easily on/off t
 schedule.every().day.at("9:00").do(run)
 ```
 
-***4. Timer:***
-- Configure stopping the software after a certain time, e.g., 30 min or 9 hours from now.
-- All you have to do is set your desired time and run the script.
 
-```
-if Timer:
-	# Automatic timer to stop the live stream. Set to 8 hours (28800s).
-	t1 = time.time()
-	num_seconds=(t1-t0)
-	if num_seconds > 28800:
-		break
-```
-
-***5. Simple log:***
-- Logs all data at end of the day.
+***2. Simple log:***
+- Logs all data during every run.
 - Useful for footfall analysis.
-<img src="https://imgur.com/CV2nCjx.png" width=400>
+- All the details of every person going in, coming out, and remaining inside can be seen un the details.txt file
 
 ## References
-***Main:***
 - SSD paper: https://arxiv.org/abs/1512.02325
 - MobileNet paper: https://arxiv.org/abs/1704.04861
 - Centroid tracker: https://www.pyimagesearch.com/2018/07/23/simple-object-tracking-with-opencv/
-
-***Optional:***
 - https://towardsdatascience.com/review-ssd-single-shot-detector-object-detection-851a94607d11
 - https://pypi.org/project/schedule/
 
