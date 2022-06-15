@@ -1,3 +1,4 @@
+from flask import Flask, render_template, request, redirect, url_for
 from mylib.centroidtracker import CentroidTracker
 from mylib.trackableobject import TrackableObject
 from imutils.video import VideoStream
@@ -8,9 +9,12 @@ import argparse, imutils
 import time, dlib, cv2, datetime
 import numpy as np
 
+app = Flask(__name__)
+
+
 t0 = time.time()
 
-
+@app.route("/")
 def run():
 	try: 
 		# construct the argument parse and parse the arguments
@@ -189,6 +193,9 @@ def run():
 						f.write("Went Out: " + str(outside) + "\n")
 						f.write("Remaining Inside: " + str(len(empty1)-len(empty)) + "\n")
 						f.close()
+						#make app return runner function
+						runner()
+						#app.runner()
 				trackableObjects[objectID] = to
 
 				# display id and centroid on frame
@@ -251,10 +258,17 @@ def run():
 		# 	vs.release()
 
 		cv2.destroyAllWindows()
+		return "Hello"
 
 	except:
 		#do nothing
-		pass
+		#return contents of details.txt\
+		f = open("details.txt", "r")
+		return f.read()
+
+def runner():
+	f = open("details.txt", "r")
+	return f.read()
 
 if config.Scheduler:
 	#schedule whenever u want to run the code
@@ -264,4 +278,4 @@ if config.Scheduler:
 		schedule.run_pending()
 
 else:
-	run()
+	app.run()
