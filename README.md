@@ -19,17 +19,17 @@ People Counting in Real-Time using live video stream/IP camera in OpenCV.
 
 ## Simple Theory
 **SSD detector:**
-- We are using a SSD (Single Shot Detector) with a MobileNet architecture. In general, it only takes a single shot to detect whatever is in an image. That is, one for generating region proposals, one for detecting the object of each proposal. 
-- Compared to other 2 shot detectors like R-CNN, SSD is quite fast.
-- MobileNet, as the name implies, is a DNN designed to run on resource constrained devices. For example, mobiles, ip cameras, scanners etc.
-- Thus, SSD seasoned with a MobileNet should theoretically result in a faster, more efficient object detector.
+- We're employing a MobileNet architecture with an SSD (Single Shot Detector). In most cases, only one shot is required to detect everything is present in an image. That is, one for generating region suggestions and another for determining what each proposal's purpose is.
+- SSD is quite fast when compared to other 2 shot detectors like R-CNN.
+- MobileNet is a DNN designed to run on low-resource devices, as the name suggests. Mobile phones, IP cameras, scanners, and other similar devices are examples.
+- As a result, a MobileNet seasoned SSD should ideally result in a faster, more efficient object detection.
 ---
 **Centroid tracker:**
-- Centroid tracker is one of the most reliable trackers out there.
-- To be straightforward, the centroid tracker computes the centroid of the bounding boxes.
-- That is, the bounding boxes are (x, y) co-ordinates of the objects in an image. 
-- Once the co-ordinates are obtained by our SSD, the tracker computes the centroid (center) of the box. In other words, the center of an object.
-- Then an unique ID is assigned to every particular object deteced, for tracking over the sequence of frames.
+- The Centroid Tracker is one of the most trustworthy trackers available.
+- The centroid tracker, to put it simply, calculates the centroid of the bounding boxes.
+- The bounding boxes, in other words, are the (x, y) coordinates of the objects in a picture.
+- The tracker computes the centroid (centre) of the box once our SSD obtains the co-ordinates. To put it another way, the object's core.
+- Then, for tracking purposes over the sequence of frames, each detected object is given a unique ID.
 
 ## Running Inference
 - Install all the required Python dependencies:
@@ -44,7 +44,7 @@ python run.py --prototxt mobilenet_ssd/MobileNetSSD_deploy.prototxt --model mobi
 - Setup your camera url in 'mylib/config.py':
 
 ```
-# Enter the ip camera url (e.g., url = 'http://191.138.0.100:8040/video')
+# Enter the ip camera url (e.g., url = 'rtsp://codonsoft:rohanchowdary@192.168.0.131:554/stream1')
 url = ''
 ```
 - Then run with the command:
@@ -66,10 +66,6 @@ The following is an example of the added features. Note: You can easily on/off t
 
 - Note: To setup the sender email, please refer the instructions inside 'mylib/mailer.py'. Setup receiver email in the config.
 
-
-
-
-
 ***1. Scheduler:***
 - Automatic scheduler to start the software. Configure to run at every second, minute, day, or Monday to Friday.
 - This is extremely useful in a business scenario, for instance, you can run it only at your desired time (9-5?).
@@ -79,7 +75,6 @@ The following is an example of the added features. Note: You can easily on/off t
 ##Runs at every day (9:00 am). You can change it.
 schedule.every().day.at("9:00").do(run)
 ```
-
 
 ***2. Simple log:***
 - Logs all data during every run.
