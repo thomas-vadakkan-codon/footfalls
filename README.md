@@ -11,13 +11,13 @@ People Counting in Real-Time using live video stream/IP camera in OpenCV.
 --- 
 
 ## Table of Contents
-* [Simple Theory](#simple-theory)
+* [Introduction](#introduction)
 * [Running Inference](#running-inference)
 * [Features](#features)
 * [References](#references)
 * [Next Steps](#next-steps)
 
-## Simple Theory
+## Introduction
 **SSD detector:**
 - We're employing a MobileNet architecture with an SSD (Single Shot Detector). In most cases, only one shot is required to detect everything is present in an image. That is, one for generating region suggestions and another for determining what each proposal's purpose is.
 - SSD is quite fast when compared to other 2 shot detectors like R-CNN.
@@ -39,7 +39,7 @@ pip install -r requirements.txt
 - To run inference on a test video file:
 - Setup path of your test video in the main.py file
 ```
-# Enter the path of your video
+# Enter the path of your video at the end of the line. For example:
 os.system("python Run.py --prototxt mobilenet_ssd/MobileNetSSD_deploy.prototxt --model mobilenet_ssd/MobileNetSSD_deploy.caffemodel --input videos/example_01.mp4")
 ```
 - Then run with the command: 
