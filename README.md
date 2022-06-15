@@ -38,7 +38,7 @@ pip install -r requirements.txt
 ```
 - To run inference on a test video file, head into the directory/use the command: 
 ```
-python run.py --prototxt mobilenet_ssd/MobileNetSSD_deploy.prototxt --model mobilenet_ssd/MobileNetSSD_deploy.caffemodel --input videos/example_01.mp4
+python main.py
 ```
 > To run inference on an IP camera:
 - Setup your camera url in 'mylib/config.py':
@@ -49,22 +49,11 @@ url = ''
 ```
 - Then run with the command:
 ```
-python run.py --prototxt mobilenet_ssd/MobileNetSSD_deploy.prototxt --model mobilenet_ssd/MobileNetSSD_deploy.caffemodel
+python manage.py
 ```
 > Set url = 0 for webcam.
 
 ## Features
-The following is an example of the added features. Note: You can easily on/off them in the config. options (mylib/config.py):
-
-<img src="https://imgur.com/Lr8mdUW.png" width=500>
-
-***1. Real-Time alert:***
-- If selected, we send an email alert in real-time. Use case: If the total number of people (say 10 or 30) exceeded in a store/building, we simply alert the staff. 
-- You can set the max. people limit in config. (``` Threshold = 10 ```).
-- This is pretty useful considering the COVID-19 scenario. 
-<img src="https://imgur.com/35Yf1SR.png" width=350>
-
-- Note: To setup the sender email, please refer the instructions inside 'mylib/mailer.py'. Setup receiver email in the config.
 
 ***1. Scheduler:***
 - Automatic scheduler to start the software. Configure to run at every second, minute, day, or Monday to Friday.
