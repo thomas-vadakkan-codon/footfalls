@@ -65,6 +65,7 @@ python manage.py
 - Automatic scheduler to start the software. Configure to run at every second, minute, day, or Monday to Friday.
 - This is extremely useful in a business scenario, for instance, you can run it only at your desired time (9-5?).
 - Variables and memory would be reset == less load on your machine.
+- Set Scheduler = True in mylib/vonfig.py file to use this feature.
 
 ```
 ##Runs at every day (9:00 am). You can change it.
@@ -85,8 +86,8 @@ schedule.every().day.at("9:00").do(run)
 
 ## Limitations
 - Train the SSD on human data only with a top-down view for good accuracy.
-- Experiment with other detectors and benchmark the results on computationally less expensive embedded hardware. 
-- Evaluate the performance on multiple IP cameras.
+- Most IP cameras work only with 2.4gHz so check network before using camera.
+- Some Operating Systems will not be able to run the code for IP cameras as they dont support rtsp protocol videos.
 
 <p>&nbsp;</p>
 
