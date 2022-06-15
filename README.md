@@ -15,7 +15,7 @@ People Counting in Real-Time using live video stream/IP camera in OpenCV.
 * [Running Inference](#running-inference)
 * [Features](#features)
 * [References](#references)
-* [Next Steps](#next-steps)
+* [Limitations](#limitations)
 
 ## Introduction
 **SSD detector:**
@@ -74,7 +74,7 @@ schedule.every().day.at("9:00").do(run)
 ***2. Simple log:***
 - Logs all data during every run.
 - Useful for footfall analysis.
-- All the details of every person going in, coming out, and remaining inside can be seen un the details.txt file
+- All the details of every person going in, coming out, and remaining inside can be seen in the details.txt file
 
 ## References
 - SSD paper: https://arxiv.org/abs/1512.02325
@@ -83,8 +83,8 @@ schedule.every().day.at("9:00").do(run)
 - https://towardsdatascience.com/review-ssd-single-shot-detector-object-detection-851a94607d11
 - https://pypi.org/project/schedule/
 
-## Next steps
-- Train the SSD on human data (with a top-down view).
+## Limitations
+- Train the SSD on human data only with a top-down view for good accuracy.
 - Experiment with other detectors and benchmark the results on computationally less expensive embedded hardware. 
 - Evaluate the performance on multiple IP cameras.
 

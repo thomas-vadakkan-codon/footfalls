@@ -2,7 +2,7 @@ from mylib.centroidtracker import CentroidTracker
 from mylib.trackableobject import TrackableObject
 from imutils.video import VideoStream
 from imutils.video import FPS
-from mylib import config, thread
+from mylib import config
 import time, schedule, csv
 import argparse, imutils
 import time, dlib, cv2, datetime
@@ -74,8 +74,6 @@ def run():
 		# start the frames per second throughput estimator
 		fps = FPS().start()
 
-		if config.Thread:
-			vs = thread.ThreadingClass(config.url)
 
 		# loop over frames from the video stream
 		while True:
@@ -252,8 +250,6 @@ def run():
 		# else:
 		# 	vs.release()
 
-		if config.Thread:
-			vs.release()
 		cv2.destroyAllWindows()
 
 	except:
