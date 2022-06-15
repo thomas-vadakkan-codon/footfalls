@@ -36,11 +36,17 @@ People Counting in Real-Time using live video stream/IP camera in OpenCV.
 ```
 pip install -r requirements.txt
 ```
-- To run inference on a test video file, head into the directory/use the command: 
+- To run inference on a test video file:
+- Setup path of your test video in the main.py file
+```
+# Enter the path of your video
+os.system("python Run.py --prototxt mobilenet_ssd/MobileNetSSD_deploy.prototxt --model mobilenet_ssd/MobileNetSSD_deploy.caffemodel --input videos/example_01.mp4")
+```
+- Then run with the command: 
 ```
 python main.py
 ```
-> To run inference on an IP camera:
+- To run inference on an IP camera:
 - Setup your camera url in 'mylib/config.py':
 
 ```
