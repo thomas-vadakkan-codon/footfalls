@@ -1,20 +1,12 @@
 # PeopleCounter in Real Time
 People Counting in Real-Time using live video stream/IP camera in OpenCV.
 
-> This is an improvement/modification to https://www.pyimagesearch.com/2018/08/13/opencv-people-counter/
+> This is an improvement/modification to https://www.pyimagesearch.com/2018/08/13/opencv-people-counter/ which i have developed for CodonSoft 
 
-> Refer to added [Features](#features). Also, added support for an IP camera.
-
-<div align="center">
-<img src=https://imgur.com/SaF1kk3.gif" width=550>
-<p>Live demo</p>
-</div>
-
-- The primary aim is to use the project as a business perspective, ready to scale.
-- Use case: counting the number of people in the stores/buildings/shopping malls etc., in real-time.
-- Sending an alert to the staff if the people are way over the limit.
-- Automating features and optimising the real-time stream for better performance (with threading).
-- Acts as a measure towards footfall analysis and in a way to tackle COVID-19.
+- The major goal is to leverage the project as a ready-to-scale business model.
+- Use case: real-time counting of people in stores, buildings, shopping malls, and other locations.
+- Improving performance by automating features and optimising the real-time stream.
+- Also serves as a countermeasure to COVID-19 by allowing for footfall analysis.
 
 --- 
 
@@ -131,21 +123,3 @@ if Timer:
 
 ---
 
-## Thanks for the read & have fun!
-
-> To get started/contribute quickly (optional) ...
-
-- **Option 1**
-    - 🍴 Fork this repo and pull request!
-
-- **Option 2**
-    - 👯 Clone this repo:
-    ```
-    $ git clone https://github.com/saimj7/People-Counting-in-Real-Time.git
-    ```
-
-- **Roll it!**
-
----
-
-saimj7/ 19-08-2020 © <a href="http://saimj7.github.io" target="_blank">Sai_Mj</a>.
