@@ -65,7 +65,7 @@ python manage.py
 - Automatic scheduler to start the software. Configure to run at every second, minute, day, or Monday to Friday.
 - This is extremely useful in a business scenario, for instance, you can run it only at your desired time (9-5?).
 - Variables and memory would be reset == less load on your machine.
-- Set Scheduler = True in mylib/vonfig.py file to use this feature.
+- Set Scheduler = True in mylib/config.py file to use this feature.
 
 ```
 ##Runs at every day (9:00 am). You can change it.
